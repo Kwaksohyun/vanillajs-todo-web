@@ -12,13 +12,12 @@ function saveToDos() {
 }
 
 function deleteToDo(event) {
-    const li = event.currentTarget.parentElement;      // <button>의 부모인 <li>
+    const li = event.currentTarget.parentElement;                 // <button>의 부모인 <li>
     li.remove();
     toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id));  // toDos DB에서 todo 삭제
     saveToDos();
 }
 
-// 화면에 보여줌
 function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
