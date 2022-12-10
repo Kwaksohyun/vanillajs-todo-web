@@ -1,0 +1,75 @@
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+.login {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    margin: 70px;
+    border-radius: 20px;
+    min-width: 850px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+.login img {
+    width: 65%;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    min-width: 50%;
+}
+
+.login-form-wrap {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+}
+
+#login-form {
+    display: flex;
+    align-items: center;
+}
+
+#login-form input:first-child {
+    border: 1px solid #dadada;
+    border-radius: 8px;
+    width: 200px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+#login-form input:last-child {
+    width: 100px;
+    height: 50px;
+    border: none;
+    border-radius: 8px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* 화면 너비가 960px 이하인 경우 */
+@media (max-width: 900px) {
+    .login img{
+        display: none;   
+    }
+
+    .login{
+        background-image: url("https://www.greenandturquoise.com/wp-content/uploads/2021/08/Funes-Valley-Villnoss-Dolomites-Italy-2-1500x1000.jpg");
+        background-size: cover;
+        min-width: 560px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .login-form-wrap {
+        background-color: white;
+        border-radius: 20px;
+    }
+}
