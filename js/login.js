@@ -1,12 +1,11 @@
 const loginScreen = document.querySelector("#login-container");
 const mainScreen = document.querySelector("#main-container");
-
-// const loginForm = document.querySelector("#login-form");
 const loginInput = document.querySelector("#login-form input");
 
 const greeting = document.querySelector("#greeting");
 const greeting2 = document.querySelector("#greeting2");
 
+const logoutBtn = document.querySelector("#logout-btn");
 const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
@@ -36,7 +35,7 @@ function paintGreetings(username) {
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 // local storage에 user 정보의 유무 확인하기
-if(savedUsername === null) {    // localStorage에 유저정보가 없을 때
+if(savedUsername === null) {
     // show the login-form
     loginScreen.classList.remove(HIDDEN_CLASSNAME);
     loginScreen.addEventListener("submit", OnLoginSubmit);
@@ -45,3 +44,18 @@ if(savedUsername === null) {    // localStorage에 유저정보가 없을 때
     paintGreetings(savedUsername);      // local stoage에 저장된 username을 가진 paintGreetings 호출
     mainScreen.classList.remove(HIDDEN_CLASSNAME);
 }
+
+
+// logout
+function onLogoutBtnClick() {
+    const logoutResult = confirm("입력하신 이름, to-do 내용 등이 삭제됩니다.\n 로그아웃하시겠습니까?");
+    if(logoutResult == true) {      // 확인 = true, 취소 = false
+        alert("로그아웃되었습니다.");
+        localStorage.removeItem(USERNAME_KEY);
+        window.location.reload();
+    } else {
+        return;
+    }   
+}
+
+logoutBtn.addEventListener('click', onLogoutBtnClick);

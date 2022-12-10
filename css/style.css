@@ -9,6 +9,10 @@ body {
     background-size: cover;
 }
 
+button {
+    border: none;
+}
+
 /* 요소 숨기는 css*/
 .hidden {
     display: none !important;;
@@ -33,6 +37,15 @@ body {
 .welcome-greeting {
     grid-area: welcome-greeting;
     padding: 15px;
+}
+
+#logout-btn {
+    background-color: black;
+    color: white;
+    width: 70px;
+    height: 30px;
+    border-radius: 35px;
+    cursor: pointer;
 }
 
 .clock {
