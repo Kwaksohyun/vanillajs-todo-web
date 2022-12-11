@@ -125,8 +125,16 @@ button {
 
 #music-player {
     grid-area: music-player;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
+}
+
+#player {
+    display: none;
+}
+
+#music-info img{
+    margin-bottom: 20px;
 }
 
 #music-info span{
