@@ -99,7 +99,7 @@ button {
 }
 
 /* 체크박스 선택 시 */
-#chk_todo:checked + label {
+#todo-list input[type=checkbox]:checked + label {
     text-decoration: line-through;
     color: #7f7c7c;
 }
@@ -115,11 +115,12 @@ button {
     width: 22px;
     height: 22px;
     background-size: cover;
+    opacity: 0.7;
 }
 
-/* 삭제버튼 클릭 시 */
-#todo-list button:active {
-    transform: translateY(-10px);
+/* 삭제버튼에 마우스 올릴 경우 */
+#todo-list button:hover img{
+    opacity: 1;
 }
 
 #music-player {

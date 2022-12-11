@@ -21,11 +21,13 @@ function deleteToDo(event) {
 function paintToDo(newTodo) {
     const li = document.createElement("li");
     li.id = newTodo.id;
+    
     const input = document.createElement("input");
     input.type = 'checkbox';
-    input.id = 'chk_todo';
+    input.id = 'chk_todo_'+ newTodo.id;
     const label = document.createElement("label");
-    label.htmlFor = 'chk_todo';
+    label.htmlFor = 'chk_todo_'+ newTodo.id;
+
     const span = document.createElement("span");
     span.innerText = newTodo.text;
 
