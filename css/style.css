@@ -57,6 +57,7 @@ button {
 .primary {
     grid-area: primary;
     text-align: center;
+    min-width: 300px;
     overflow: auto;
 }
 
@@ -70,6 +71,10 @@ button {
     border: 1px solid #dadada;
     border-radius: 5px;
     padding: 10px;
+}
+
+#todo-form input:focus {
+    border-width:  3px;
 }
 
 #todo-list {
