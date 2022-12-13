@@ -54,6 +54,31 @@ button {
     text-align: center;
 }
 
+#calendar {
+    grid-area: calendar;
+    width: 225px;
+}
+
+#calendar .cal-wrap__weekday {
+    display: flex;
+}
+
+.cal-wrap__weekday .weekday__day {
+    padding: 0px 10px;
+}
+
+#calendar .cal-wrap__dates {
+    display: flex;
+    flex-flow: wrap;
+}
+
+#calendar .dates__date {
+    width: calc(100% / 7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .primary {
     grid-area: primary;
     text-align: center;
@@ -246,7 +271,7 @@ button {
         grid-template-areas:
         'welcome-greeting . clock weather'
         'music-player quote primary primary'
-        'music-player . primary primary';
+        'music-player calendar primary primary';
         gap: 30px;
     }
 }
@@ -258,7 +283,7 @@ button {
         grid-template-rows: 0.3fr minmax(auto, 400px) minmax(auto, 400px) 0.5fr;
         grid-template-areas:
         'welcome-greeting clock weather'
-        'quote . .'
+        'quote calendar calendar'
         'music-player primary primary';
         gap: 20px;
     }
