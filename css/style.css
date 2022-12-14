@@ -63,15 +63,12 @@ button {
     display: flex;
 }
 
-.cal-wrap__weekday .weekday__day {
-    padding: 0px 10px;
-}
-
 #calendar .cal-wrap__dates {
     display: flex;
     flex-flow: wrap;
 }
 
+.cal-wrap__weekday .weekday__day,
 #calendar .dates__date {
     width: calc(100% / 7);
     display: flex;
