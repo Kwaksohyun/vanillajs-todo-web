@@ -57,15 +57,33 @@ button {
 #calendar {
     grid-area: calendar;
     width: 225px;
+    background-color: rgb(219, 195, 161);
+    color: white;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+#calendar .cal__month {
+    text-align: center;
+}
+#calendar .cal-wrap {
+    height: 120px;
 }
 
 #calendar .cal-wrap__weekday {
     display: flex;
 }
 
+.cal-wrap__weekday .weekday__day:first-child {
+    color: red;
+}
+.cal-wrap__weekday .weekday__day:last-child {
+    color: blue;
+}
+
 #calendar .cal-wrap__dates {
     display: flex;
     flex-flow: wrap;
+    line-height: 1.2;
 }
 
 .cal-wrap__weekday .weekday__day,
@@ -74,6 +92,23 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.cal-wrap__dates .today {
+    position: relative;
+    color: black;
+    z-index: 1;
+}
+
+.cal-wrap__dates .today::before {
+    position: absolute;
+    content: "";
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    top: 2px;
+    z-index: -1;
 }
 
 .primary {

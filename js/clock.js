@@ -1,13 +1,14 @@
 const clock = document.querySelector("h2#clock");
 const todaysDate = document.querySelector("h2#todays-date");
 
-const todayDate = new Date();
-const year = todayDate.getFullYear();
-const month = String(todayDate.getMonth()+1);
-const date = Math.floor(todayDate.getDate());
-const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
-
 function getClock() {
+    const todayDate = new Date();
+
+    const year = todayDate.getFullYear();
+    const month = String(todayDate.getMonth()+1);
+    const date = Math.floor(todayDate.getDate());
+    
+    const weekday = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
     const day = weekday[todayDate.getDay()];
 
     const hours = String(todayDate.getHours()).padStart(2, "0");
