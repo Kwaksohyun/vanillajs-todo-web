@@ -28,25 +28,30 @@
 
     <div id="main-container" class="hidden">
         <!-- welcome-greeting -->
-        <div class="welcome-greeting">
+        <header id="welcome-greeting">
             <h3 class="hidden" id="greeting"></h3>
             <h3 class="hidden" id="greeting2"></h3>
             <button id="logout-btn" type="button">logout</button>
-        </div>
+        </header>
 
-        <!-- clock -->
-        <div class="clock">
-            <h2 id="clock">00:00:00</h1>
-            <h2 id="todays-date">00.00.00</h2>
-        </div>
-        
-        <!-- calendar -->
-        <div id="calendar">
-            <h3 class="cal__month"></h3>
-            <div class="cal-wrap">
-                <div class="cal-wrap__weekday"></div>
-                <div class="cal-wrap__dates">
+        <div class="clock-calendar">
+            <!-- clock -->
+            <div id="clock">
+                <h2 class="clock">00:00:00</h1>
+                <div class="todays">
+                    <h1 id="todays-day"></h1>
+                    <h1 id="todays-date"></h1>
+                </div>
+            </div>
+            
+            <!-- calendar -->
+            <div id="calendar">
+                <h2 class="cal__month"></h2>
+                <div class="cal-wrap">
+                    <div class="cal-wrap__weekday"></div>
+                    <div class="cal-wrap__dates">
 
+                    </div>
                 </div>
             </div>
         </div>
@@ -61,7 +66,7 @@
         
         <!-- todo List-->
         <div class="primary">
-            <h2>To Do List</h2>
+            <h1>To Do List</h1>
             <form id="todo-form">
                 <input type="text" placeholder="Write a To Do and Press Enter" required>
             </form>
