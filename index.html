@@ -34,83 +34,85 @@
             <button id="logout-btn" type="button">logout</button>
         </header>
 
-        <div class="clock-calendar">
-            <!-- clock -->
-            <div id="clock">
-                <h2 class="clock">00:00:00</h1>
-                <div class="todays">
-                    <h1 id="todays-day"></h1>
-                    <h1 id="todays-date"></h1>
+        <main class="main">
+            <div class="clock-calendar">
+                <!-- clock -->
+                <div id="clock">
+                    <h2 class="clock">00:00:00</h1>
+                    <div class="todays">
+                        <h1 id="todays-day"></h1>
+                        <h1 id="todays-date"></h1>
+                    </div>
                 </div>
-            </div>
-            
-            <!-- calendar -->
-            <div id="calendar">
-                <h2 class="cal__month"></h2>
-                <div class="cal-wrap">
-                    <div class="cal-wrap__weekday"></div>
-                    <div class="cal-wrap__dates">
+                
+                <!-- calendar -->
+                <div id="calendar">
+                    <h2 class="cal__month"></h2>
+                    <div class="cal-wrap">
+                        <div class="cal-wrap__weekday"></div>
+                        <div class="cal-wrap__dates">
 
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        <!-- weather-->
-        <div id="weather">
-            <span></span>
-            <span></span>
-            <img>
-            <span></span>
-        </div>
-        
-        <!-- todo List-->
-        <div class="primary">
-            <h1>To Do List</h1>
-            <form id="todo-form">
-                <input type="text" placeholder="Write a To Do and Press Enter" required>
-            </form>
-            <ul id="todo-list">
-            </ul>
-        </div>
-
-        <!-- music player-->
-        <div id="music-player">
-            <div id="player"></div>
+            <!-- weather-->
+            <div id="weather">
+                <span></span>
+                <span></span>
+                <img>
+                <span></span>
+            </div>
             
-            <div id="music-info">
-                <img src="" id="music-img" alt="music_img">
-                <span id="music-name">제목</span>
-                <span id="artist">가수</span>
+            <!-- todo List-->
+            <div class="primary">
+                <h1>To Do List</h1>
+                <form id="todo-form">
+                    <input type="text" placeholder="Write a To Do and Press Enter" required>
+                </form>
+                <ul id="todo-list">
+                </ul>
             </div>
-            <div id="audio">
-                <div id="progress-bar-container">
-                    <div id="progress-bar"></div>
-                </div>
-                <!-- <audio src=""  id="audio-bar"></audio> -->
-                <div id="timer">
-                    <span class="current">0:00</span>
-                    <span class="duration">0:00</span>
-                </div>
-            </div>
-            <div id="music-control">
-                <button type="button" id="prev">
-                    <img src="images/icon/left_icon.png">
-                </button>
-                <button type="button" id="play-paused" class="paused" title="일시중지">
-                    <img src="images/icon/play_icon.png">
-                </button>
-                <button type="button" id="next">
-                    <img src="images/icon/right_icon.png">
-                </button>
-            </div>
-        </div>
 
-        <!-- quote-->
-        <div id="quote">
-            <span></span>
-            <span></span>
-        </div>
+            <!-- music player-->
+            <div id="music-player">
+                <div id="player"></div>
+                
+                <div id="music-info">
+                    <img src="" id="music-img" alt="music_img">
+                    <span id="music-name">제목</span>
+                    <span id="artist">가수</span>
+                </div>
+                <div id="audio">
+                    <div id="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                    <!-- <audio src=""  id="audio-bar"></audio> -->
+                    <div id="timer">
+                        <span class="current">0:00</span>
+                        <span class="duration">0:00</span>
+                    </div>
+                </div>
+                <div id="music-control">
+                    <button type="button" id="prev">
+                        <img src="images/icon/left_icon.png">
+                    </button>
+                    <button type="button" id="play-paused" class="paused" title="일시중지">
+                        <img src="images/icon/play_icon.png">
+                    </button>
+                    <button type="button" id="next">
+                        <img src="images/icon/right_icon.png">
+                    </button>
+                </div>
+            </div>
+
+            <!-- quote-->
+            <div id="quote">
+                <span></span>
+                <span></span>
+            </div>
+        </main>
     </div>
     <script src="js/login.js"></script>
     <script src="js/clock.js"></script>

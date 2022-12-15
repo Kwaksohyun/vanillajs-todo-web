@@ -33,7 +33,11 @@ h3 {
 
 #main-container {
     height: 100vh;
+}
+
+.main {
     padding: 50px;
+    padding-top: 0px;
 }
 
 .primary,
@@ -47,7 +51,7 @@ h3 {
 
 #welcome-greeting {
     grid-area: welcome-greeting;
-    padding: 15px;
+    padding: 10px 50px 10px 50px;
     display: flex;
     align-items: center;
 }
@@ -216,6 +220,7 @@ h3 {
     grid-area: music-player;
     padding: 30px;
     text-align: center;
+    min-width: 380px;
 }
 
 #player {
@@ -323,27 +328,25 @@ h3 {
 }
 
 @media (min-width: 1024px) {
-    #main-container {
+    .main {
         display: grid;
-        grid-template-columns: 1fr 0.5fr 0.5fr 1fr;
-        grid-template-rows: 0.3fr 1fr 1fr;
+        grid-template-columns: 1fr 0.6fr 1fr;
+        grid-template-rows: 0.3fr 1fr;
         grid-template-areas:
-        'welcome-greeting . . clock-calendar'
-        'music-player quote quote primary'
-        'music-player weather . primary';
+        'quote weather clock-calendar'
+        'music-player . primary';
         gap: 30px;
     }
 }
 
 @media (max-width: 1024px) {
-    #main-container {
+    .main {
         display: grid;
-        grid-template-columns: 1fr 0.5fr 0.5fr;
-        grid-template-rows: 0.3fr minmax(auto, 200px) 1fr;
+        grid-template-columns: 0.5fr 0.5fr 0.5fr;
+        grid-template-rows: minmax(auto, 200px) 1fr;
         grid-template-areas:
-        'welcome-greeting clock-calendar clock-calendar'
-        'quote weather .'
-        'music-player primary primary';
+        'quote weather clock-calendar'
+        'music-player music-player primary';
         gap: 20px;
     }
 }
