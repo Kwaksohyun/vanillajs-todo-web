@@ -1,4 +1,4 @@
-const clock = document.querySelector("h2.clock");
+const clock = document.querySelector(".clock");
 const todaysDay = document.querySelector("h1#todays-day");
 const todaysDate = document.querySelector("h1#todays-date");
 

@@ -29,6 +29,10 @@
     padding: 50px;
 }
 
+.login-form-wrap h1 {
+    margin-bottom: 30px;
+}
+
 #login-form {
     display: flex;
     align-items: center;
