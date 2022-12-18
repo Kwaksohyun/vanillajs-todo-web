@@ -115,18 +115,30 @@ function handlePlayBtnClick() {
         playPausedBtn.classList.remove(PAUSED_CLASSNAME);
         playPausedBtn.setAttribute("title", "재생");
         playPausedBtnImg.src = 'images/icon/pause_icon.png';
-        player.playVideo();     // 자동재생
+        player.playVideo();     // 로드한 동영상 재생
 
     } else {
         // 재생 중이라면
         playPausedBtn.classList.add(PAUSED_CLASSNAME);
         playPausedBtn.setAttribute("title", "일시중지");
         playPausedBtnImg.src = 'images/icon/play_icon.png';
-        player.pauseVideo();
+        player.pauseVideo();    // 일시중지
     }   
 }
 
 let currentPlayerList = 0;
+
+// 이전 곡 재생
+function handlePrevBtnClick() {
+    if(currentPlayerList <= 0) {
+        currentPlayerList = PLAYLIST.length-1;
+    } else {
+        currentPlayerList -= 1;
+    }
+    displayMusicInfo();
+    player.loadVideoById(PLAYLIST[currentPlayerList].videoId);
+    handlePlayBtnClick()
+}
 
 // 다음 곡 재생
 function handleNextBtnClick() {
@@ -140,18 +152,6 @@ function handleNextBtnClick() {
     handlePlayBtnClick()
     
     //console.log(player.playerInfo.duration); //undefined
-}
-
-// 이전 곡 재생
-function handlePrevBtnClick() {
-    if(currentPlayerList <= 0) {
-        currentPlayerList = PLAYLIST.length-1;
-    } else {
-        currentPlayerList -= 1;
-    }
-    displayMusicInfo();
-    player.loadVideoById(PLAYLIST[currentPlayerList].videoId);
-    handlePlayBtnClick()
 }
 
 playPausedBtn.addEventListener("click", handlePlayBtnClick);
