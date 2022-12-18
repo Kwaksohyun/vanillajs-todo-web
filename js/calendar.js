@@ -1,4 +1,3 @@
-const calendar = document.querySelector("#calendar");
 const calMonth = document.querySelector(".cal__month");
 const calWeekDay = document.querySelector(".cal-wrap__weekday");
 const calWrapDates = document.querySelector(".cal-wrap__dates");
