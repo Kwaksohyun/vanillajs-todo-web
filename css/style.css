@@ -43,7 +43,8 @@ h3 {
 .primary,
 #music-player,
 #weather,
-#quote {
+#quote,
+#d-day {
     background-color: white;
     border-radius: 25px;
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -220,6 +221,15 @@ h3 {
     opacity: 1;
 }
 
+#d-day {
+    grid-area: dDay;
+    text-align: center;
+}
+
+#d-day h1 {
+    margin: 20px 0px;
+}
+
 #music-player {
     grid-area: music-player;
     padding: 30px;
@@ -339,11 +349,10 @@ h3 {
     .main {
         display: grid;
         grid-template-columns: 1fr 0.5fr 0.4fr 1fr;
-        grid-template-rows: 0.3fr 0.5fr 1fr;
+        grid-template-rows: minmax(auto, 200) 1fr;
         grid-template-areas:
-        '. . weather clock-calendar'
-        'music-player quote quote primary'
-        'music-player . . primary';
+        'quote . weather clock-calendar'
+        'music-player dDay dDay primary';
         gap: 30px;
     }
 }
@@ -355,6 +364,7 @@ h3 {
         grid-template-rows: 0.3fr 0.5fr 1fr;
         grid-template-areas:
         'quote weather clock-calendar'
+        'dDay dDay .'
         'music-player music-player primary';
         gap: 20px;
     }
