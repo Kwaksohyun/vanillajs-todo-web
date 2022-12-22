@@ -3,13 +3,26 @@ const dDayTitleInput = dDayForm.querySelector(`input[type="text"]`);
 const dDayDateInput = dDayForm.querySelector(`input[type="date"]`);
 const dDayList = document.getElementById("dDay-list");
 
+const DDAY_KEY = "ddays";
+
 let dDays = [];
+
+function saveDDays() {
+    localStorage.setItem(DDAY_KEY, JSON.stringify(dDays));
+}
 
 function paintDDay(newdDayObj) {
     const li = document.createElement("li");
+    li.className = 'dDay-list__item';
     li.id = newdDayObj.id;
 
-    const div = document.createElement("div");
+    const div1 = document.createElement("div");
+    div1.className = 'dDay-list__item-info';
+
+    const dDayImage = document.createElement("img");
+    dDayImage.src = 'images/icon/calendar_check_icon.png';
+
+    const div2 = document.createElement("div");
     const spanTitle = document.createElement("span");
     spanTitle.className = 'dDay-title';
     spanTitle.innerText = newdDayObj.title;
@@ -17,7 +30,6 @@ function paintDDay(newdDayObj) {
     const spanDate = document.createElement("span");
     spanDate.className = 'dDay-date';
     spanDate.innerText = newdDayObj.date;
-
 
     // d-day 구하기
     const todayD = new Date();
@@ -35,13 +47,14 @@ function paintDDay(newdDayObj) {
         spanDDay.innerText = `D+` + Math.abs(day);
     }
 
-    li.appendChild(div);
-    div.appendChild(spanTitle);
-    div.appendChild(spanDate);
+    li.appendChild(div1);
+    div1.appendChild(dDayImage);
+    div1.appendChild(div2);
+    div2.appendChild(spanTitle);
+    div2.appendChild(spanDate);
     li.appendChild(spanDDay);
     dDayList.appendChild(li);
 }
-
 
 function handleDDaySubmit(event) {
     event.preventDefault();
@@ -49,15 +62,24 @@ function handleDDaySubmit(event) {
     const newdDayTitle = dDayTitleInput.value;
     dDayTitleInput.value = "";
 
-    const newdDayDate = dDayDateInput.value;    //2022-12-19
+    const newdDayDate = dDayDateInput.value;    //2022-12-19(string)
     const newdDayObj = {
         id:Date.now()*2,
         title: newdDayTitle,
         date: newdDayDate
     } 
     dDays.push(newdDayObj);
-    
+
     paintDDay(newdDayObj);
+    saveDDays(newdDayObj);
 }
 
 dDayForm.addEventListener("submit", handleDDaySubmit);
+
+const savedDDays = localStorage.getItem(DDAY_KEY);
+
+if(savedDDays !== null) {
+    const parseDDays = JSON.parse(savedDDays);
+    dDays = parseDDays;
+    parseDDays.forEach(paintDDay);
+}
