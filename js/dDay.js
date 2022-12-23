@@ -1,11 +1,30 @@
+const dDayFormBtn = document.querySelector(".dDay-form__btn");
+const dDAyFormBtnImg = dDayFormBtn.querySelector("img");
+
 const dDayForm = document.getElementById("dDay-form");
 const dDayTitleInput = dDayForm.querySelector(`input[type="text"]`);
 const dDayDateInput = dDayForm.querySelector(`input[type="date"]`);
 const dDayList = document.getElementById("dDay-list");
 
+const PLUS_CLASSNAME = "plus";
 const DDAY_KEY = "ddays";
 
 let dDays = [];
+
+function handleDDayFormDisplayBtnClick() {
+    const isFormDisplayed = dDayFormBtn.classList.contains(PLUS_CLASSNAME);
+
+    if(isFormDisplayed) {
+        // plus인 상태
+        dDayFormBtn.classList.remove(PLUS_CLASSNAME);
+        dDayForm.classList.remove(HIDDEN_CLASSNAME);
+        dDAyFormBtnImg.src = 'images/icon/minus_circle_icon.png';
+    } else {
+        dDayFormBtn.classList.add(PLUS_CLASSNAME);
+        dDayForm.classList.add(HIDDEN_CLASSNAME);
+        dDAyFormBtnImg.src = 'images/icon/plus_circle_icon.png';
+    }
+}
 
 function saveDDays() {
     localStorage.setItem(DDAY_KEY, JSON.stringify(dDays));
@@ -74,6 +93,7 @@ function handleDDaySubmit(event) {
     saveDDays(newdDayObj);
 }
 
+dDayFormBtn.addEventListener("click", handleDDayFormBtnClick);
 dDayForm.addEventListener("submit", handleDDaySubmit);
 
 const savedDDays = localStorage.getItem(DDAY_KEY);

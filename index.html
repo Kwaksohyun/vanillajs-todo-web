@@ -84,10 +84,13 @@
             <!-- d-day -->
             <div id="d-day">
                 <h1>D-Day</h1>
-                <form id="dDay-form">
+                <button class="dDay-form__display-btn plus" type="button">
+                    <img src="images/icon/plus_circle_icon.png">
+                </button>
+                <form id="dDay-form" class="hidden">
                     <input type="text" placeholder="디데이 제목을 입력하세요." required />
                     <label>날짜 <input type="date" required /></label>
-                    <button type="submit">저장</button>
+                    <button class="dDay-form__submit" type="submit">저장</button>
                 </form>
                 <ul id="dDay-list">
                 </ul>
