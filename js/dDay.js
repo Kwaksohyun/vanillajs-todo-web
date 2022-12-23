@@ -1,4 +1,4 @@
-const dDayFormBtn = document.querySelector(".dDay-form__btn");
+const dDayFormBtn = document.querySelector(".dDay-form__display-btn");
 const dDAyFormBtnImg = dDayFormBtn.querySelector("img");
 
 const dDayForm = document.getElementById("dDay-form");
@@ -93,7 +93,7 @@ function handleDDaySubmit(event) {
     saveDDays(newdDayObj);
 }
 
-dDayFormBtn.addEventListener("click", handleDDayFormBtnClick);
+dDayFormBtn.addEventListener("click", handleDDayFormDisplayBtnClick);
 dDayForm.addEventListener("submit", handleDDaySubmit);
 
 const savedDDays = localStorage.getItem(DDAY_KEY);
