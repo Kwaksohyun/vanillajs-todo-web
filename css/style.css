@@ -249,6 +249,7 @@ h3 {
     color: #7f7c7c;
 }
 
+.dDay-form__display-btn,
 #todo-list button,
 #music-control button{
     background: none no-repeat;
@@ -275,6 +276,31 @@ h3 {
 
 #d-day h1 {
     margin: 20px 0px;
+}
+
+.dDay-form__display-btn img{
+    width: 40px;
+    height: 40px;
+}
+
+#dDay-form input{
+    background-color: #f0f0f0;
+    border: none;
+    padding: 13px 10px;
+    border-radius: 5px;
+}
+
+#dDay-form input[type="date"] {
+    width: 150px;   
+}
+
+.dDay-form__submit {
+    background-color: black;
+    color: white;
+    width: 50px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
 }
 
 #dDay-list .dDay-list__item {
@@ -388,7 +414,7 @@ h3 {
 @media (min-width: 1024px) {
     .main {
         display: grid;
-        grid-template-columns: 1fr 0.4fr 0.4fr 1fr;
+        grid-template-columns: 1fr 0.5fr 0.4fr 1fr;
         grid-template-rows: minmax(auto, 200) 1fr;
         grid-template-areas:
         'quote . weather clock-calendar'
