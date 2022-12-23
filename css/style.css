@@ -172,7 +172,7 @@ h3 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 140px;
+    min-width: 120px;
 }
 
 #weather span:nth-child(1) {
@@ -198,7 +198,7 @@ h3 {
 .primary {
     grid-area: primary;
     text-align: center;
-    min-width: 290px;
+    /* min-width: 280px; */
     overflow: auto;
 }
 
@@ -272,6 +272,8 @@ h3 {
 #d-day {
     grid-area: dDay;
     text-align: center;
+    min-width: 200px;
+    overflow: auto;
 }
 
 #d-day h1 {
@@ -302,12 +304,15 @@ h3 {
     border-radius: 15px;
     cursor: pointer;
 }
+#dDay-list {
+    padding: 0px 20px;
+}
 
 #dDay-list .dDay-list__item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 260px;
+    /* min-width: 200px; */
     padding: 10px 20px;
     margin: 10px 0px;
     border-radius: 15px;
