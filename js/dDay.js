@@ -30,6 +30,13 @@ function saveDDays() {
     localStorage.setItem(DDAY_KEY, JSON.stringify(dDays));
 }
 
+function deleteDDay(event) {
+    const li = event.currentTarget.parentElement;
+    li.remove();
+    dDays = dDays.filter((newdDayObj) => newdDayObj.id !== parseInt(li.id));
+    saveDDays();
+}
+
 function paintDDay(newdDayObj) {
     const li = document.createElement("li");
     li.className = 'dDay-list__item';
@@ -38,18 +45,31 @@ function paintDDay(newdDayObj) {
     const div1 = document.createElement("div");
     div1.className = 'dDay-list__item-info';
 
+    const div2 = document.createElement("div");
+    div2.className = 'item-info__title';
+
     const dDayImage = document.createElement("img");
     dDayImage.src = 'images/icon/calendar_check_icon.png';
 
-    const div2 = document.createElement("div");
+    const div3 = document.createElement("div");
+    div3.className = 'item-info__text';
     const spanTitle = document.createElement("span");
     spanTitle.className = 'dDay-title';
     spanTitle.innerText = newdDayObj.title;
 
     const spanDate = document.createElement("span");
     spanDate.className = 'dDay-date';
-    spanDate.innerText = newdDayObj.date;
+    const week = ["일", "월", "화", "수", "목", "금", "토"];
+    const dayOfTheWeek = new Date(newdDayObj.date).getDay();
+    spanDate.innerText = `${newdDayObj.date} (${week[dayOfTheWeek]})`;
 
+    const button = document.createElement("button");
+    button.type = 'button';
+    const buttonImg = document.createElement("img");
+    buttonImg.src = 'images/icon/delete_icon.png';
+
+    button.addEventListener("click", deleteDDay);
+    
     // d-day 구하기
     const todayD = new Date();
     const dDay = new Date(`"${newdDayObj.date}"`) - todayD;     // ms 단위(1초=1000ms)
@@ -67,11 +87,15 @@ function paintDDay(newdDayObj) {
     }
 
     li.appendChild(div1);
-    div1.appendChild(dDayImage);
     div1.appendChild(div2);
-    div2.appendChild(spanTitle);
-    div2.appendChild(spanDate);
-    li.appendChild(spanDDay);
+    div2.appendChild(dDayImage);
+    div2.appendChild(div3);
+    div3.appendChild(spanTitle);
+    div3.appendChild(spanDate);
+    div1.appendChild(spanDDay);
+    li.appendChild(button);
+    button.appendChild(buttonImg);
+
     dDayList.appendChild(li);
 }
 
