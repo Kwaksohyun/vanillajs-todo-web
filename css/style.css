@@ -272,7 +272,7 @@ h3 {
 #d-day {
     grid-area: dDay;
     text-align: center;
-    min-width: 200px;
+    min-width: 320px;
     overflow: auto;
 }
 
@@ -285,6 +285,14 @@ h3 {
     height: 40px;
 }
 
+#dDay-form {
+    display: flex;
+    flex-direction: column;
+    height: 140px;
+    align-items: center;
+    justify-content: space-between;
+}
+
 #dDay-form input{
     background-color: #f0f0f0;
     border: none;
@@ -292,16 +300,26 @@ h3 {
     border-radius: 5px;
 }
 
+#dDay-form input[type="text"] {
+    width: 300px; 
+}
+
+#dDay-form label {
+    font-weight: 700;
+}
+
 #dDay-form input[type="date"] {
-    width: 150px;   
+    margin-left: 5px;
+    width: 260px;   
 }
 
 .dDay-form__submit {
     background-color: black;
     color: white;
-    width: 50px;
-    height: 30px;
-    border-radius: 15px;
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+    font-weight: 700;
     cursor: pointer;
 }
 #dDay-list {
@@ -416,7 +434,7 @@ h3 {
     transform: scale(1.1);
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 1120px) {
     .main {
         display: grid;
         grid-template-columns: 1fr 0.5fr 0.4fr 1fr;
@@ -428,7 +446,7 @@ h3 {
     }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1120px) {
     .main {
         display: grid;
         grid-template-columns: 0.5fr 0.5fr 1fr;
