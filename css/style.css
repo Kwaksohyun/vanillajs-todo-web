@@ -250,6 +250,7 @@ h3 {
 }
 
 .dDay-form__display-btn,
+.dDay-list__item button,
 #todo-list button,
 #music-control button{
     background: none no-repeat;
@@ -264,7 +265,8 @@ h3 {
     opacity: 0.7;
 }
 
-/* 삭제버튼에 마우스 올릴 경우 */
+/* 마우스 올릴 경우 */
+.dDay-list__item button:hover img,
 #todo-list button:hover img{
     opacity: 1;
 }
@@ -339,15 +341,22 @@ h3 {
 
 .dDay-list__item-info {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
 }
 
-.dDay-list__item-info img {
+.item-info__title {
+    display: flex;
+}
+
+.item-info__title img {
     width: 33px;
     height: 35px;
     margin-right: 10px;
 }
 
-.dDay-list__item-info div {
+.item-info__text {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -362,10 +371,18 @@ h3 {
     font-size: 14px;
 }
 
-.dDay-list__item>span {
+.dDay-list__item-info > span {
     font-weight: 700;
     font-size: 18px;
 }
+
+.dDay-list__item button img {
+    width: 20px;
+    height: 20px;
+    background-size: cover;
+    opacity: 0.1;
+}
+
 #music-player {
     grid-area: music-player;
     padding: 30px;
