@@ -42,7 +42,6 @@ if(savedUsername === null) {
 } else {
     // show the greetings
     paintGreetings(savedUsername);      // local stoage에 저장된 username을 가진 paintGreetings 호출
-    mainScreen.classList.remove(HIDDEN_CLASSNAME);
 }
 
 
@@ -51,7 +50,6 @@ function onLogoutBtnClick() {
     const logoutResult = confirm("입력하신 이름, 할 일 항목 등이 삭제됩니다.\n로그아웃하시겠습니까?");
     if(logoutResult == true) {      // 확인 = true, 취소 = false
         alert("로그아웃되었습니다.");
-        // localStorage.removeItem(USERNAME_KEY);
         localStorage.clear();
         window.location.reload();
     } else {

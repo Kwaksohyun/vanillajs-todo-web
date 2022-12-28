@@ -40,8 +40,8 @@ function paintToDo(newTodo) {
 
     li.appendChild(input);
     li.appendChild(label);
-    label.appendChild(span);       // <label> 태그 안에 <span>태그
-    li.appendChild(button);       // <li> 태그 안에 <input>,<label>,<button> 태그
+    label.appendChild(span);
+    li.appendChild(button);
     button.appendChild(buttonImage);
     
     toDoList.appendChild(li);
