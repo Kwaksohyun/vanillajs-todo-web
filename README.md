@@ -30,7 +30,7 @@
     * D-day 추가/삭제 기능
 
 6. Youtube Player API를 활용한 음악 플레이어
-iframe Player API를 통해 Youtube 동영상 플레이어 제어
+    * iframe Player API를 통해 Youtube 동영상 플레이어 제어
     * 현재 재생 중인 동영상의 썸네일 이미지
     * 플레이어의 상태를 통해 동영상 재생, 일시중지, 다음 재생, 이전 재생 버튼
     * 현재 재생 중인 동영상의 재생 시간을 초 단위로 반환
